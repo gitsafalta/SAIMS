@@ -1,0 +1,24 @@
+/* Discount */
+
+select d.discountTypeId, d.TypeName, ci.categoryId, c.name categoryName, ci.itemId, i.name itemName from Order o 
+    inner join DiscountRule r on o.discountRuleId = r.discountRuleId
+    inner join DiscountType d on r.discountTypeId = d.discountTypeId
+    inner join CategoryItem ci on o.itemid = ci.itemId
+    inner join Category c on ci.categoryId = c.id
+    inner join Item i on ci.itemId = i.itemId
+
+/* Inventory */
+
+select i.id, i.name Item, c.name Category, i.AvailableQuantity Item i on t.itemId = i.id
+    inner join CategoryItem ci on i.id = ci.itemId
+    inner join Category c on ci.categoryId = c.id 
+
+/* sales */
+
+select oi.itemId, i.name itemname, c.name categoryname, cr.name customername, oi.quantity, oi.total from OrderItem oi
+	inner join Order o on oi.id = o.orderId
+	inner join Item i on oi.itemId = i.id
+	inner join CategoryItem ci on i.itemId = c.itemId
+	inner join Category c on ci.categoryId = c.id
+	inner join Customer cr on o.customerId = cr.Id
+	

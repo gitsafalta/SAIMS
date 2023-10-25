@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Sales Summary Report";
+}
+<div class="container">
+    
+    <div class="form-group row">
+        <div class="form-group col-md-3">
+            <label for="selectPeriod4">Period</label>
+            <select id="selectPeriod" class="form-control form-select form-inline">
+                <option value="0">Select</option>
+                <option value="3">Daily</option>
+                <option value="2">Monthly</option>
+                <option value="1">Yearly</option>
+            </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="selectYear4">Year</label>
+            <select id="year" class="form-control form-select" title="year">
+            </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="selectMonth4">Month</label>
+            <select id="month" class="form-control form-select" title="month">
+            </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="selectDay4">Day</label>
+            <select id="day" class="form-control form-select" title="day">
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="form-group col-md-3"><button id="search" type="button" class="btn btn-secondary m-2">Search</button>
+        </div>
+    </div>
+    <div class="total-sales p-3">
+        <b>Total <span id="periodSelectedValue"></span> Sales :</b> <span id="totalsales">0</span>
+    </div>
+    <div class="daily-sales p-3">
+        <h3>Revenue Details</h3>
+        <table id="salesSummaryReportTable" class="display" width="100%">
+            <tfoot>
+                <tr>
+                    <th colspan="7" style="text-align:right">Total:</th>
+                    <th></th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <div>
+        <canvas id="dailySalesLineChart"></canvas>
+    </div>
+    </div>
+    
+
+
+@section scripts{
+    <script src="~/js/salessummaryreport.js?v=1.1"></script>
+}

@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Inventory Status Report";
+}
+
+<h2>Inventory Status</h2>
+<div class="container">
+    <table id="inventoryStatusReportTable" class="display" width="100%">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Item</th>
+                <th>Category</th>
+                <th>Available Quantity</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+@section scripts{
+    <script src="~/js/inventorystatusreport.js"></script>
+}
